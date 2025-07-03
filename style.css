@@ -1,0 +1,789 @@
+/* General Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.login-body,
+.theme-green {
+  background: linear-gradient(to right, #003300, #006600);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background-color: #003300;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #005500;
+}
+
+.login-container a {
+  color: #006600;
+  text-decoration: none;
+}
+
+.clock-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-frame.big-clock {
+  display: none;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #003300;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.center-box {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.icon-clock {
+  margin-top: 20px;
+}
+
+.clock-link {
+  font-size: 40px;
+  color: #003300;
+} */
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.login-body,
+.theme-green {
+  background: linear-gradient(to right, #003300, #006600);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background-color: #003300;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #005500;
+}
+
+.login-container a {
+  color: #006600;
+  text-decoration: none;
+}
+
+.clock-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-frame.big-clock {
+  display: none;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #003300;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.center-box {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.icon-clock {
+  margin-top: 20px;
+}
+
+.clock-link {
+  font-size: 40px;
+  color: #003300;
+} */
+
+
+
+
+
+
+
+
+/* General Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.login-body,
+.theme-green {
+  background: linear-gradient(to right, #003300, #006600);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background-color: #003300;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #005500;
+}
+
+.login-container a {
+  color: #006600;
+  text-decoration: none;
+}
+
+.clock-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-frame.big-clock {
+  display: none;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #003300;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.center-box {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.icon-clock {
+  margin-top: 20px;
+}
+
+.clock-link {
+  font-size: 40px;
+  color: #003300;
+} */
+
+
+
+
+
+
+
+/* General Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.login-body,
+.theme-green {
+  background: linear-gradient(to right, #003300, #006600);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background-color: #003300;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #005500;
+}
+
+.login-container a {
+  color: #006600;
+  text-decoration: none;
+}
+
+.clock-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-frame.big-clock {
+  display: none;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #003300;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggle-sidebar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 11;
+  background: #003300;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+}
+
+.center-box {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.icon-clock {
+  margin-top: 20px;
+}
+
+.clock-link {
+  font-size: 40px;
+  color: #003300;
+} */
+
+
+
+
+
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.login-body,
+.theme-green {
+  background: linear-gradient(to right, #003300, #006600);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  background-color: #003300;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #005500;
+}
+
+.login-container a {
+  color: #006600;
+  text-decoration: none;
+}
+
+.clock-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-frame.big-clock {
+  display: none;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #003300;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dashboard .toggle-sidebar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 11;
+  background: #003300;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+}
+
+.center-box {
+  background-color: white;
+  color: #003300;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.icon-clock {
+  margin-top: 20px;
+}
+
+.clock-link {
+  font-size: 40px;
+  color: #003300;
+}
