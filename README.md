@@ -1,2 +1,2 @@
 # My-Clock-Dashboard
-A basic login page with a dashboard and in dashboard when clicking the card which has a clock icon it will direct us to a page where a clock will appear 
+A interactive login page with a dashboard. Where four card are avaiable in the dash board which has a clock, world clock, stopwatch, countdown timer. By clicking on he card will direct us to a clock, world clock, stopwatch, countdown timer.
