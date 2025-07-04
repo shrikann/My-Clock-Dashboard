@@ -1,0 +1,281 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .worldclock-container {
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #003300, #006600);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .city-clocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .city-clock {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .city-clock h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .city-clock p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #005500;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="worldclock-container">
+    <h1>World Clock</h1>
+    <div class="city-clocks">
+      <div class="city-clock">
+        <h2>New York</h2>
+        <p id="newyork-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>London</h2>
+        <p id="london-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Tokyo</h2>
+        <p id="tokyo-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Mumbai</h2>
+        <p id="mumbai-time"></p>
+      </div>
+    </div>
+    <a href="home.html" class="back-button">B</a>
+  </div>
+
+  <script>
+    function updateWorldClocks() {
+      const cities = {
+        "newyork-time": "America/New_York",
+        "london-time": "Europe/London",
+        "tokyo-time": "Asia/Tokyo",
+        "mumbai-time": "Asia/Kolkata",
+      };
+
+      for (const [id, zone] of Object.entries(cities)) {
+        const now = new Date().toLocaleTimeString('en-US', {
+          timeZone: zone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+        document.getElementById(id).textContent = now;
+      }
+    }
+
+    setInterval(updateWorldClocks, 1000);
+    updateWorldClocks(); // Initial call
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .worldclock-container {
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #003300, #006600);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .city-clocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .city-clock {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .city-clock h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .city-clock p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #005500;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="worldclock-container">
+    <h1>World Clock</h1>
+    <div class="city-clocks">
+      <div class="city-clock">
+        <h2>New York</h2>
+        <p id="newyork-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>London</h2>
+        <p id="london-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Tokyo</h2>
+        <p id="tokyo-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Mumbai</h2>
+        <p id="mumbai-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Paris</h2>
+        <p id="paris-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Dubai</h2>
+        <p id="dubai-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Sydney</h2>
+        <p id="sydney-time"></p>
+      </div>
+      <div class="city-clock">
+        <h2>Los Angeles</h2>
+        <p id="la-time"></p>
+      </div>
+    </div>
+    <a href="home.html" class="back-button">B</a>
+  </div>
+
+  <script>
+    function updateWorldClocks() {
+      const cities = {
+        "newyork-time": "America/New_York",
+        "london-time": "Europe/London",
+        "tokyo-time": "Asia/Tokyo",
+        "mumbai-time": "Asia/Kolkata",
+        "paris-time": "Europe/Paris",
+        "dubai-time": "Asia/Dubai",
+        "sydney-time": "Australia/Sydney",
+        "la-time": "America/Los_Angeles"
+      };
+
+      for (const [id, zone] of Object.entries(cities)) {
+        const now = new Date().toLocaleTimeString('en-US', {
+          timeZone: zone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+        document.getElementById(id).textContent = now;
+      }
+    }
+
+    setInterval(updateWorldClocks, 1000);
+    updateWorldClocks(); // Initial call
+  </script>
+</body>
+</html>

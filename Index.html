@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+  <div class="clock-background">
+    <div class="clock-frame big-clock">
+      <div class="clock-circle">
+        <div class="clock-hand hour-hand"></div>
+        <div class="clock-hand minute-hand"></div>
+      </div>
+    </div>
+    <div class="login-container">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter your name" required />
+      
+      <input type="password" placeholder="Password" />
+      <!-- <button onclick="window.location.href='home.html'">Login</button> -->
+      <button onclick="handleLogin()">Login</button>
+        
+      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </div>
+  <!-- Vanta.js Interactive Background -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+  VANTA.NET({
+    el: "body",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x00ff99,
+    backgroundColor: 0x003300,
+    points: 10.0,
+    maxDistance: 22.0,
+    spacing: 18.0
+  });
+</script>
+  <script>
+  function handleLogin() {
+    const username = document.getElementById("username").value.trim();
+    if (username) {
+      localStorage.setItem("userName", username);  // Save the name to localStorage
+      window.location.href = "home.html";          // Redirect to dashboard
+    } else {
+      alert("Please enter your name.");
+    }
+  }
+</script>
+
+
+
+</body>
+</html>

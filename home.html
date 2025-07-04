@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-green">
+  <div class="dashboard">
+    <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+    <!-- <div class="welcome-user">Welcome, User!</div> -->
+     <div class="welcome-user" id="welcomeUser"></div>
+      
+
+    <aside class="sidebar" id="sidebar">
+      <h2>My Dashboard</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <!-- <div class="center-box">
+        <a href="clock.html" class="card-link">🕒 Clock</a>
+        <a href="countdown.html" class="card-link">⏳ Countdown</a>
+        <a href="stopwatch.html" class="card-link">⏱ Stopwatch</a>
+        <a href="worldclock.html" class="card-link">🌍 World Clock</a>
+      </div> -->
+          <div class="widget-row">
+    <a href="clock.html" class="widget-card">
+      <img src="assets/clock-icon.png" alt="Clock">
+      <span>Clock</span>
+    </a>
+    <a href="countdown.html" class="widget-card">
+      <img src="assets/countdown-icon.png" alt="Countdown">
+      <span>Countdown</span>
+    </a>
+    <a href="stopwatch.html" class="widget-card">
+      <img src="assets/stopwatch-icon.png" alt="Stopwatch">
+      <span>Stopwatch</span>
+    </a>
+    <a href="worldclock.html" class="widget-card">
+      <img src="assets/worldclock-icon.png" alt="World Clock">
+      <span>World Clock</span>
+    </a>
+  </div>
+      <div class="weather-widget">
+        <h3>Weather</h3>
+        <p id="location">Loading location...</p>
+        <p id="temperature">--°C</p>
+        <p id="description">--</p>
+      </div>
+      <div class="quote-bar">
+    <p id="quoteText">Loading quote...</p>
+    <p id="quoteAuthor"></p>
+  </div>
+
+
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+<script>
+  const name = localStorage.getItem("userName"); // ✅ Fetch from login
+  const hours = new Date().getHours();
+  let greeting = "Welcome";
+
+  if (hours < 12) greeting = "Good Morning";
+  else if (hours < 18) greeting = "Good Afternoon";
+  else greeting = "Good Evening";
+
+  document.getElementById("welcomeUser").textContent = `${greeting}, ${name || 'User'}!`;
+</script>
+<script>
+  const apiKey = "2db6c31b67b5fb0d26faca029d8c11fd";
+
+  function fetchWeather(lat, lon) {
+    const url = 
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("location").textContent = data.name;
+        document.getElementById("temperature").textContent = `${Math.round(data.main.temp)}°C`;
+        document.getElementById("description").textContent = data.weather[0].description;
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("location").textContent = "Weather unavailable";
+      });
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        fetchWeather(position.coords.latitude, position.coords.longitude);
+      },
+      error => {
+        console.error(error);
+        document.getElementById("location").textContent = "Location denied";
+      }
+    );
+  } else {
+    document.getElementById("location").textContent = "Geolocation not supported";
+  }
+</script>
+
+<script>
+  fetch("https://type.fit/api/quotes")
+    .then(res => res.json())
+    .then(data => {
+      const quote = data[Math.floor(Math.random() * data.length)];
+      document.getElementById("quoteText").textContent = `"${quote.text}"`;
+      document.getElementById("quoteAuthor").textContent = `— ${quote.author || "Unknown"}`;
+    })
+    .catch(() => {
+      document.getElementById("quoteText").textContent = "Stay positive, work hard, make it happen.";
+    });
+</script>
+<script>
+  const quotes = [
+    { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+    { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+    { text: "Your time is limited, don’t waste it living someone else’s life.", author: "Steve Jobs" },
+    { text: "Hard work beats talent when talent doesn't work hard.", author: "Tim Notke" },
+    { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" }
+  ];
+
+  const todayIndex = new Date().getDate() % quotes.length;
+  const quote = quotes[todayIndex];
+
+  document.getElementById("quoteText").textContent = `"${quote.text}"`;
+  document.getElementById("quoteAuthor").textContent = `— ${quote.author}`;
+</script>
+
+
+</body>
+</html>

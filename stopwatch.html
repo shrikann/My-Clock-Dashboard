@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .stopwatch-container {
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #003300, #006600);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .stopwatch-display {
+      font-size: 4rem;
+      margin-bottom: 30px;
+    }
+
+    .stopwatch-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #005500;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .stopwatch-buttons button:hover {
+      background-color: #007700;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #005500;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stopwatch-container">
+    <div class="stopwatch-display" id="display">00:00:00</div>
+    <div class="stopwatch-buttons">
+      <button onclick="startStopwatch()">Start</button>
+      <button onclick="stopStopwatch()">Stop</button>
+      <button onclick="resetStopwatch()">Reset</button>
+    </div>
+    <a href="home.html" class="back-button">B</a>
+  </div>
+
+  <script>
+    let stopwatchInterval;
+    let elapsedTime = 0;
+    let running = false;
+
+    function updateDisplay() {
+      const hours = Math.floor(elapsedTime / 3600);
+      const minutes = Math.floor((elapsedTime % 3600) / 60);
+      const seconds = elapsedTime % 60;
+      document.getElementById('display').textContent =
+        `${String(hours).padStart(2, '0')}:` +
+        `${String(minutes).padStart(2, '0')}:` +
+        `${String(seconds).padStart(2, '0')}`;
+    }
+
+    function startStopwatch() {
+      if (!running) {
+        running = true;
+        stopwatchInterval = setInterval(() => {
+          elapsedTime++;
+          updateDisplay();
+        }, 1000);
+      }
+    }
+
+    function stopStopwatch() {
+      clearInterval(stopwatchInterval);
+      running = false;
+    }
+
+    function resetStopwatch() {
+      stopStopwatch();
+      elapsedTime = 0;
+      updateDisplay();
+    }
+
+    updateDisplay(); // initialize on load
+  </script>
+</body>
+</html>

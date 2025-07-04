@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .timer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      text-align: center;
+    }
+    .timer-inputs input {
+      width: 60px;
+      margin: 10px;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    .timer-display {
+      font-size: 48px;
+      margin: 20px 0;
+      color: white;
+    }
+    .timer-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #003300;
+      color: white;
+      cursor: pointer;
+    }
+    .timer-buttons button:hover {
+      background-color: #005500;
+    }
+  </style>
+</head>
+<body class="theme-green">
+  <div class="center-box timer-container">
+    <h1>Countdown Timer</h1>
+    <div class="timer-inputs">
+      <input type="number" id="hours" placeholder="HH" min="0" max="99">
+      <input type="number" id="minutes" placeholder="MM" min="0" max="59">
+      <input type="number" id="seconds" placeholder="SS" min="0" max="59">
+    </div>
+    <div class="timer-display" id="timer">00:00:00</div>
+    <div class="timer-buttons">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <a href="home.html" class="back-button">B</a>
+  </div>
+
+  <script>
+    let timerInterval;
+    let totalSeconds = 0;
+    let paused = false;
+
+    function updateDisplay() {
+      const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(totalSeconds % 60).padStart(2, '0');
+      document.getElementById('timer').textContent = `${hrs}:${mins}:${secs}`;
+    }
+
+    function startTimer() {
+      if (!paused) {
+        const h = parseInt(document.getElementById('hours').value) || 0;
+        const m = parseInt(document.getElementById('minutes').value) || 0;
+        const s = parseInt(document.getElementById('seconds').value) || 0;
+        totalSeconds = h * 3600 + m * 60 + s;
+      }
+      paused = false;
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          updateDisplay();
+        } else {
+          clearInterval(timerInterval);
+          alert('⏰ Time is up!');
+        }
+      }, 1000);
+      updateDisplay();
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      paused = true;
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      totalSeconds = 0;
+      paused = false;
+      updateDisplay();
+    }
+
+    updateDisplay();
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .countdown-container {
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #003300, #006600);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .countdown-display {
+      font-size: 4rem;
+      margin-bottom: 30px;
+    }
+
+    .countdown-inputs input {
+      width: 60px;
+      padding: 10px;
+      font-size: 1.2rem;
+      text-align: center;
+      margin: 0 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .countdown-buttons {
+      margin-top: 20px;
+    }
+
+    .countdown-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #005500;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .countdown-buttons button:hover {
+      background-color: #007700;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #005500;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown-container">
+    <h1>Countdown Timer</h1>
+    <div class="countdown-inputs">
+      <input type="number" id="minutes" placeholder="Min" min="0" />
+      <input type="number" id="seconds" placeholder="Sec" min="0" />
+    </div>
+
+    <div class="countdown-display" id="countdown-display">00:00</div>
+
+    <div class="countdown-buttons">
+      <button onclick="startCountdown()">Start</button>
+      <button onclick="stopCountdown()">Stop</button>
+      <button onclick="resetCountdown()">Reset</button>
+    </div>
+
+    <a href="home.html" class="back-button">B</a>
+  </div>
+
+  <script>
+    let countdownInterval;
+    let remainingTime = 0;
+
+    function updateCountdownDisplay() {
+      const mins = Math.floor(remainingTime / 60);
+      const secs = remainingTime % 60;
+      document.getElementById("countdown-display").textContent =
+        `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function startCountdown() {
+      const min = parseInt(document.getElementById("minutes").value) || 0;
+      const sec = parseInt(document.getElementById("seconds").value) || 0;
+      remainingTime = min * 60 + sec;
+      if (remainingTime <= 0) return;
+
+      updateCountdownDisplay();
+      countdownInterval = setInterval(() => {
+        if (remainingTime > 0) {
+          remainingTime--;
+          updateCountdownDisplay();
+        } else {
+          clearInterval(countdownInterval);
+          alert("⏰ Time's up!");
+        }
+      }, 1000);
+    }
+
+    function stopCountdown() {
+      clearInterval(countdownInterval);
+    }
+
+    function resetCountdown() {
+      stopCountdown();
+      remainingTime = 0;
+      updateCountdownDisplay();
+    }
+
+    updateCountdownDisplay(); // initialize
+  </script>
+</body>
+</html>
